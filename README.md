@@ -1,6 +1,6 @@
 ﻿# Geolocalization API
 
-## How to run the API on your computer . with Docker
+## How to run the API on your computer with Docker
     
     cd 'path/To/GeolocalizationApi/Solution'
 
