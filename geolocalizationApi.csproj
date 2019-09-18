@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="MaxMind.GeoIP2" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\Data\" />
+    <Folder Include="Middlewares\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Controllers\Parameters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DockerFile.txt" />
+    <None Remove="Database\Data\GeoLite2-Country.mmdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Database\Data\GeoLite2-Country.mmdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Data\GeoLite2-Country.mmdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
